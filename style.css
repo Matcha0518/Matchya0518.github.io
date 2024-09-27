@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4;
+    background-color: #fff; /* ページ全体を白に */
 }
 
 /* ヘッダー */
@@ -11,8 +11,8 @@ body {
     display: flex;
     align-items: center;
     padding: 15px;
-    background-color: #333;
-    color: white;
+    background-color: transparent; /* 背景を透明に変更 */
+    color: black;
 }
 
 .menu-icon {
@@ -34,7 +34,7 @@ body {
 /* サイドバー */
 .sidebar {
     position: fixed;
-    left: -250px;
+    left: -250px; /* サイドバーが画面外に隠れる */
     top: 0;
     width: 250px;
     height: 100%;
@@ -42,6 +42,7 @@ body {
     color: white;
     padding-top: 60px;
     transition: 0.3s;
+    z-index: 1000; /* 前面に表示 */
 }
 
 .sidebar ul {
@@ -70,8 +71,10 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s, visibility 0.3s;
+    z-index: 900; /* 記事の上に表示される */
 }
 
+/* ツールバーが表示されているとき */
 .overlay.active {
     visibility: visible;
     opacity: 1;
@@ -86,22 +89,25 @@ main {
 /* ブログ記事スタイル */
 .blog-posts {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 横に4つ */
     gap: 20px;
+    justify-content: center; /* 中央寄せ */
 }
 
 .post {
     position: relative;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* より濃い影に変更 */
     background-color: white;
     transition: transform 0.2s;
+    width: 250px; /* 幅を狭く */
+    height: 400px; /* 縦幅を大きく */
 }
 
 .post img {
     width: 100%;
-    height: 200px;
+    height: 60%; /* 高さを固定 */
     object-fit: cover;
 }
 
@@ -111,6 +117,16 @@ main {
     text-align: center;
 }
 
+.post a {
+    color: black;
+    text-decoration: none;
+}
+
 .post:hover {
     transform: translateY(-10px);
+}
+
+/* ツールバーのアニメーション */
+.sidebar.active {
+    left: 0;
 }

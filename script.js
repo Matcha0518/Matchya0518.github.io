@@ -1,5 +1,3 @@
-// JavaScript for form submission (if needed)
-// You can extend this script to add dynamic functionality to your blog
 function toggleMenu() {
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
