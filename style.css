@@ -6,88 +6,111 @@ body {
     background-color: #f4f4f4;
 }
 
-header {
+/* ヘッダー */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
     background-color: #333;
     color: white;
-    padding: 20px 0;
-    text-align: center;
 }
 
-nav ul {
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* サイドバー */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding-top: 60px;
+    transition: 0.3s;
+}
+
+.sidebar ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+.sidebar ul li {
+    padding: 15px 20px;
 }
 
-nav ul li a {
+.sidebar ul li a {
     color: white;
     text-decoration: none;
+    display: block;
 }
 
+/* オーバーレイ */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* メインコンテンツ */
 main {
     padding: 20px;
+    margin-top: 60px;  /* ヘッダーの下に配置 */
 }
 
-section {
-    margin-bottom: 40px;
+/* ブログ記事スタイル */
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
-h2 {
-    color: #333;
-}
-
-article {
-    background-color: white;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #555;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
+.post {
     position: relative;
-    bottom: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: transform 0.2s;
+}
+
+.post img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post h3 {
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.post:hover {
+    transform: translateY(-10px);
 }

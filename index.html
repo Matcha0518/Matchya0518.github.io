@@ -8,62 +8,59 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>My Personal Blog</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+
+    <!-- ツールバーボタンとロゴ -->
+    <header class="header">
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776; <!-- ハンバーガーメニューアイコン -->
+        </div>
+        <div class="logo">
+            <img src="images/logo.png" alt="Blog Logo">
+            <span>My Blog</span>
+        </div>
     </header>
 
+    <!-- 左からスライドするツールバー -->
+    <div id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#links">Links</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div id="overlay" class="overlay" onclick="closeMenu()"></div>
     <main>
         <section id="home">
             <h2>Welcome to My Blog</h2>
             <p>This is a place where I share my thoughts and experiences.</p>
-        </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm a web developer passionate about technology and writing.</p>
-        </section>
-
-        <section id="blog">
-            <h2>Latest Posts</h2>
-            <!-- Blog posts will be added here -->
-            <article>
-                <h3>Blog Post Title 1</h3>
-                <p>Content of blog post 1...</p>
-            </article>
-            <article>
-                <h3>Blog Post Title 2</h3>
-                <p>Content of blog post 2...</p>
-            </article>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Send</button>
-            </form>
+            <!-- ブログ記事セクション -->
+            <section id="blog">
+                <h2>Latest Posts</h2>
+                <div class="blog-posts">
+                    <div class="post">
+                        <img src="articles/20240927/post-image.jpg" alt="Blog Post 1">
+                        <h3>Blog Post Title 1</h3>
+                    </div>
+                    <div class="post">
+                        <img src="articles/20240927/post-image.jpg" alt="Blog Post 2">
+                        <h3>Blog Post Title 2</h3>
+                    </div>
+                    <div class="post">
+                        <img src="articles/20240927/post-image.jpg" alt="Blog Post 3">
+                        <h3>Blog Post Title 3</h3>
+                    </div>
+                    <div class="post">
+                        <img src="articles/20240927/post-image.jpg" alt="Blog Post 4">
+                        <h3>Blog Post Title 4</h3>
+                    </div>
+                </div>
+            </section>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2024 My Blog</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
